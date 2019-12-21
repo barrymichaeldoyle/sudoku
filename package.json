@@ -1,6 +1,7 @@
 {
   "name": "sudoku",
   "version": "0.1.0",
+  "homepage": "https://barrymichaeldoyle.github.io/sudoku",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -16,6 +17,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
