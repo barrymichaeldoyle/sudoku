@@ -12,8 +12,8 @@ const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 /**
  * A backtracking/recusrive function to check all possible combinations of numbers until a solution is found
+ * @param grid 9X9 Sudoku Grid
  */
-
 function fillGrid(grid: GRID) {
   let row = 0;
   let col = 0;

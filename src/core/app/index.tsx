@@ -6,7 +6,7 @@ const App: React.FC = () => {
   const grid = createFullGrid();
   console.log({ grid });
 
-  return <div className="App" />;
+  return <div>See console for generated sudoku grid</div>;
 };
 
 export default App;

@@ -1,10 +1,13 @@
 import { GRID, NUMBERS } from "typings";
-import { checkGrid, identifySquare } from "utils";
+import { checkGrid, identifySquare, isInCol, isInRow, isInSquare } from "utils";
 
 /**
  * A backtracking/recusrive function to check all possible combinations of numbers until a solution is found
  * @param grid A 9X9 array consisting of values from 0-9
  */
+
+const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 function solveGrid(grid: GRID) {
   let counter = 0;
   let row = 0;
@@ -15,42 +18,24 @@ function solveGrid(grid: GRID) {
     col = i % 9;
 
     if (grid[row][col] === 0) {
-      for (let value = 1; value < 10; value++) {
-        // Check that this value has not already been used on this row
-        if (!grid[row].includes(value as NUMBERS)) {
-          // Check that this value has not already been used on this column
-          if (
-            ![
-              grid[0][col],
-              grid[1][col],
-              grid[2][col],
-              grid[3][col],
-              grid[4][col],
-              grid[5][col],
-              grid[6][col],
-              grid[7][col],
-              grid[8][col]
-            ].includes(value as NUMBERS)
-          ) {
+      for (let value of numbers)
+        if (!isInRow({ grid, row, value }))
+          if (!isInCol({ col, grid, value })) {
             const square = identifySquare({ grid, row, col });
-            // Check that this value has not already been used on this square
-            if (
-              ![...square[0], ...square[1], ...square[2]].includes(
-                value as NUMBERS
-              )
-            ) {
-              grid[row][col] = value as NUMBERS;
+            if (!isInSquare({ square, value })) {
+              grid[row][col] = value;
               if (checkGrid(grid)) {
                 counter++;
+                console.log({ counter });
                 break;
               } else if (solveGrid(grid)) return true;
             }
           }
-        }
-      }
+
       break;
     }
   }
+
   grid[row][col] = 0;
 }
 
