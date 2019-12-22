@@ -1,15 +1,13 @@
 import { GRID, NUMBERS, N } from "../../typings";
 import checkGrid from "../check-grid";
-import shuffle from "../shuffle-array";
+import shuffle from "../shuffle";
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 /**
  * A backtracking/recusrive function to check all possible combinations of numbers until a solution is found
- * @param grid A 9X9 array consisting of values from 0-9
  */
 function fillGrid(grid: GRID) {
-  let counter = 0;
   let row = 0;
   let col = 0;
 

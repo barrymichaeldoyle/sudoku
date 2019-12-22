@@ -1,9 +1,7 @@
-import React from "react";
+import { GRID } from "../../typings";
+import { fillGrid } from "..";
 
-import fillGrid from "./utils/fill-grid";
-import { GRID } from "./typings";
-
-const App: React.FC = () => {
+function createFullGrid(): GRID {
   const grid: GRID = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -15,10 +13,10 @@ const App: React.FC = () => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
   ];
+
   fillGrid(grid);
-  console.log({ grid });
 
-  return <div className="App" />;
-};
+  return grid;
+}
 
-export default App;
+export default createFullGrid;
