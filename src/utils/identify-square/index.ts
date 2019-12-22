@@ -1,4 +1,4 @@
-import { GRID, N } from "typings";
+import { GRID, SQUARE } from "typings";
 
 interface IInput {
   grid: GRID;
@@ -10,8 +10,8 @@ interface IInput {
  * A function that identifies and returns the current square of a given sudoku grid at a row and column index.
  * @param input Object with 9X9 Sudoku Grid, row index and col index.
  */
-function identifyWorkingSquare({ col, grid, row }: IInput): N[][] {
-  const square: N[][] = [];
+function identifyWorkingSquare({ col, grid, row }: IInput): SQUARE {
+  const square = [];
   if (row < 3) {
     if (col < 3)
       for (let x = 0; x < 3; x++)
@@ -44,7 +44,7 @@ function identifyWorkingSquare({ col, grid, row }: IInput): N[][] {
         square.push([grid[x][6], grid[x][7], grid[x][8]]);
   }
 
-  return square;
+  return square as SQUARE;
 }
 
 export default identifyWorkingSquare;
