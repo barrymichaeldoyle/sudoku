@@ -42,7 +42,7 @@ test("returns false when grid is not complete", () => {
   ).toBeFalsy();
 });
 
-xtest("returns true when grid is complete", () =>
+test("returns true when grid is complete", () =>
   expect(
     checkGrid([
       [1, 2, 3, 4, 5, 6, 7, 8, 9],
