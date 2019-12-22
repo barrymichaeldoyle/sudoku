@@ -1,5 +1,4 @@
 import checkGrid from "./";
-import createFullGrid from "utils/create-full-grid";
 
 describe("checkGrid", () => {
   it("returns false when grid is not complete", () => {
