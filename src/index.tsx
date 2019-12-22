@@ -1,8 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-import { App, unregister } from 'core'
+import { Grid } from 'components'
+import { configureStore, unregister } from 'core'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const store = configureStore()
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Grid />
+  </Provider>,
+  document.getElementById('root')
+)
 
 unregister()

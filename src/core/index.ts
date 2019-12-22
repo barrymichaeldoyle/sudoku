@@ -1,3 +1,2 @@
-export { default as App } from './app'
-export { default as createStore } from './create-store'
+export { default as configureStore } from './configure-store'
 export * from './service-worker'
