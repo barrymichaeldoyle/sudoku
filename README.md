@@ -11,7 +11,8 @@ Currently this project demonstrates my proficiency in the following:
 Upcoming proficiency demonstrations:
 
 - Redux
-- Styled Components
+- Developing for Accessibility
+- Styled Components (with Animations etc.)
 - Routing
 - Code Splitting
 - End to End Testing with Cypress
