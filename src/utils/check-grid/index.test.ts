@@ -1,7 +1,7 @@
-import checkGrid from "./";
+import checkGrid from './'
 
-describe("checkGrid", () => {
-  it("returns false when grid is not complete", () => {
+describe('checkGrid', () => {
+  it('returns false when grid is not complete', () => {
     expect(
       checkGrid([
         [0, 9, 8, 3, 1, 2, 6, 4, 7],
@@ -12,9 +12,9 @@ describe("checkGrid", () => {
         [6, 5, 1, 8, 9, 7, 3, 2, 4],
         [7, 6, 9, 2, 4, 5, 1, 3, 8],
         [8, 2, 5, 1, 3, 9, 4, 7, 6],
-        [1, 3, 4, 7, 8, 6, 9, 5, 2]
+        [1, 3, 4, 7, 8, 6, 9, 5, 2],
       ])
-    ).toBeFalsy();
+    ).toBeFalsy()
     expect(
       checkGrid([
         [5, 9, 8, 3, 1, 2, 6, 4, 7],
@@ -25,9 +25,9 @@ describe("checkGrid", () => {
         [6, 5, 1, 8, 9, 7, 3, 2, 4],
         [7, 6, 9, 2, 4, 5, 1, 3, 8],
         [8, 2, 5, 1, 3, 9, 4, 7, 6],
-        [1, 3, 4, 7, 8, 6, 9, 5, 2]
+        [1, 3, 4, 7, 8, 6, 9, 5, 2],
       ])
-    ).toBeFalsy();
+    ).toBeFalsy()
     expect(
       checkGrid([
         [5, 9, 8, 3, 1, 2, 6, 4, 7],
@@ -38,12 +38,12 @@ describe("checkGrid", () => {
         [6, 5, 1, 8, 9, 7, 3, 2, 4],
         [7, 6, 9, 2, 4, 5, 1, 3, 8],
         [8, 2, 5, 1, 3, 9, 4, 7, 6],
-        [1, 3, 4, 7, 8, 6, 9, 5, 0]
+        [1, 3, 4, 7, 8, 6, 9, 5, 0],
       ])
-    ).toBeFalsy();
-  });
+    ).toBeFalsy()
+  })
 
-  it("returns true when grid is complete", () => {
+  it('returns true when grid is complete', () => {
     expect([
       [5, 9, 8, 3, 1, 2, 6, 4, 7],
       [4, 1, 6, 5, 7, 8, 2, 9, 3],
@@ -53,7 +53,7 @@ describe("checkGrid", () => {
       [6, 5, 1, 8, 9, 7, 3, 2, 4],
       [7, 6, 9, 2, 4, 5, 1, 3, 8],
       [8, 2, 5, 1, 3, 9, 4, 7, 6],
-      [1, 3, 4, 7, 8, 6, 9, 5, 2]
-    ]).toBeTruthy();
-  });
-});
+      [1, 3, 4, 7, 8, 6, 9, 5, 2],
+    ]).toBeTruthy()
+  })
+})

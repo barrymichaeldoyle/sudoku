@@ -1,4 +1,4 @@
-import { GRID } from "../../typings";
+import { GRID } from '../../typings'
 
 /**
  * A function to check if the grid is full
@@ -6,9 +6,9 @@ import { GRID } from "../../typings";
  */
 function checkGrid(grid: GRID): boolean {
   for (let i = 0; i < 9; i++)
-    for (let j = 0; j < 9; j++) if (grid[i][j] === 0) return false;
+    for (let j = 0; j < 9; j++) if (grid[i][j] === 0) return false
 
-  return true;
+  return true
 }
 
-export default checkGrid;
+export default checkGrid

@@ -1,9 +1,9 @@
-import { createStore } from "redux";
+import { createStore } from 'redux'
 
-import rootReducer from "modules";
+import rootReducer from 'modules'
 
 function createReduxStore() {
-  return createStore(rootReducer);
+  return createStore(rootReducer)
 }
 
-export default createReduxStore;
+export default createReduxStore

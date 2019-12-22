@@ -1,5 +1,5 @@
-import { GRID } from "../../typings";
-import { fillGrid } from "..";
+import { GRID } from '../../typings'
+import { fillGrid } from '..'
 
 function createFullGrid(): GRID {
   const grid: GRID = [
@@ -11,12 +11,12 @@ function createFullGrid(): GRID {
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0]
-  ];
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  ]
 
-  fillGrid(grid);
+  fillGrid(grid)
 
-  return grid;
+  return grid
 }
 
-export default createFullGrid;
+export default createFullGrid
