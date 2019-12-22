@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux'
 
-export default combineReducers({})
+import grid from './grid'
+
+const rootReducer = combineReducers({ grid })
+
+export default rootReducer

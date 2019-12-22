@@ -1,20 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Provider } from 'react-redux'
 
+import { Grid } from 'components'
 import { createStore } from 'core'
-import { createFullGrid } from 'utils'
 
 const store = createStore()
 
-const App: React.FC = () => {
-  const grid = createFullGrid()
-  console.log({ grid })
-
-  return (
-    <Provider store={store}>
-      <div>See console for generated sudoku grid</div>
-    </Provider>
-  )
-}
+const App: FC = () => (
+  <Provider store={store}>
+    <Grid />
+  </Provider>
+)
 
 export default App
