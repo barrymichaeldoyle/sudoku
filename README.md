@@ -1,5 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It is a hobby project that I'm making to keep my algorithmic skills up tos cratch and demonstrate my ability to build applications with a variety of toolsets!
+
+Currently this project demonstrates my proficiency in the following:
+
+- ReactJS with TypeScript
+- Maintaining an organized codebase with consistent development patterns
+- Unit Testing Components and Functions with Jest
+
+Upcoming proficiency demonstrations:
+
+- Redux
+- Styled Components
+- Routing
+- Code Splitting
+- End to End Testing with Cypress
+
 ## Available Scripts
 
 In the project directory, you can run:
