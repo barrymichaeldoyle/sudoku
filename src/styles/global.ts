@@ -15,8 +15,7 @@ export default createGlobalStyle`
           background: ${theme.colors.background};
           color: ${theme.colors.font};
           display: flex;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-            sans-serif;
+          font-family: sans-serif;
           height: 100%;
           justify-content: center;
           padding: 15px;
