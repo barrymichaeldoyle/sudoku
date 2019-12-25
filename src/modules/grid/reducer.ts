@@ -5,7 +5,7 @@ import { createFullGrid, normalizeGrid } from 'utils'
 import * as types from './types'
 import { IReducer } from './interfaces'
 
-const initialState: IReducer = { grid: [] }
+const initialState: IReducer = { grid: undefined }
 
 function reducer(state = initialState, action: AnyAction): IReducer {
   switch (action.type) {

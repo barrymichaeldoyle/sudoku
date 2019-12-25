@@ -1,3 +1,5 @@
+import { NORMALIZED_GRID } from 'typings'
+
 export interface IReducer {
-  grid: any
+  grid?: NORMALIZED_GRID
 }
