@@ -21,6 +21,7 @@ export const Container = styled.div<IProps>`
     height: auto;
     justify-content: center;
     transition: ${theme.transition};
+    user-select: none;
 
     &:before {
       padding-top: 100%;
