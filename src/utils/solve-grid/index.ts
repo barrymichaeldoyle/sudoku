@@ -3,12 +3,16 @@ import { checkGrid, identifySquare, isInCol, isInRow, isInSquare } from 'utils'
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+interface IOutput {
+  counter: number
+  repeat: boolean
+}
+
 /**
- * A backtracking/recusrive function to check all possible combinations of numbers until a solution is found
+ * A backtracking/recursive function to check all possible combinations of numbers until a solution is found
  * @param grid A 9X9 array consisting of values from 0-9
  */
-function solveGrid(grid: GRID) {
-  let counter = 0
+function solveGrid(grid: GRID, counter: number): IOutput {
   let row = 0
   let col = 0
 
@@ -25,9 +29,9 @@ function solveGrid(grid: GRID) {
               grid[row][col] = value
               if (checkGrid(grid)) {
                 counter++
-                console.log({ counter })
                 break
-              } else if (solveGrid(grid)) return true
+              } else if (solveGrid(grid, counter).repeat)
+                return { counter, repeat: true }
             }
           }
 
@@ -36,6 +40,7 @@ function solveGrid(grid: GRID) {
   }
 
   grid[row][col] = 0
+  return { counter, repeat: false }
 }
 
 export default solveGrid

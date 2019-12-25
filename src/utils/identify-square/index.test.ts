@@ -1,4 +1,5 @@
 import { GRID } from 'typings'
+
 import identifySquare from './'
 
 describe('identifySquare', () => {

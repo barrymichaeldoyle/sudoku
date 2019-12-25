@@ -1,5 +1,5 @@
-import { GRID } from '../../typings'
-import { fillGrid } from '..'
+import { GRID } from 'typings'
+import { fillGrid } from 'utils'
 
 /**
  * A function to create a full valid sudoku grid
