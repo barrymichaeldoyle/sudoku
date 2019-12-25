@@ -1,12 +1,8 @@
+import global from 'global'
 import { getRandomIndex, solveGrid } from 'utils'
 import { GRID, INDEX } from 'typings'
 
-function removeNumbers(grid: GRID): GRID {
-  console.log('test')
-
-  let attempts = 5
-  let counter = 1
-
+function removeNumbers(grid: GRID, attempts = 5): GRID {
   while (attempts > 0) {
     let row = getRandomIndex()
     let col = getRandomIndex()
@@ -19,23 +15,22 @@ function removeNumbers(grid: GRID): GRID {
     const backup = grid[row][col]
     grid[row][col] = 0
 
-    console.log({ cell: grid[row][col], grid, col, row })
-
     const gridCopy: any[] = []
     for (let r: INDEX = 0; r < 9; r++) {
       gridCopy[r] = []
       for (let c: INDEX = 0; c < 9; c++) gridCopy[r][c] = grid[r][c]
     }
 
-    counter = solveGrid(gridCopy as GRID, counter).counter
+    global.counter = 0
+    solveGrid(gridCopy as GRID)
 
-    if (counter !== 1) {
+    if (global.counter !== 1) {
       grid[row][col] = backup
       attempts -= 1
     }
   }
 
-  return grid as GRID
+  return grid
 }
 
 export default removeNumbers

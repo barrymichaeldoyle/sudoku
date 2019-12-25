@@ -9,8 +9,11 @@ const initialState: IReducer = { grid: undefined }
 
 function reducer(state = initialState, action: AnyAction): IReducer {
   switch (action.type) {
-    case types.CREATE_FULL_GRID:
-      return { ...state, grid: normalizeGrid(removeNumbers(createFullGrid())) }
+    case types.CREATE_FULL_GRID: {
+      const grid = createFullGrid()
+      removeNumbers(grid)
+      return { ...state, grid: normalizeGrid(grid) }
+    }
 
     case types.SELECT_BLOCK:
       return { ...state, selectedBlock: action.coords }
