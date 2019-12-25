@@ -1,8 +1,15 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
-  ${({ theme }) => css`
+interface IProps {
+  active?: boolean
+}
+
+export const Container = styled.div<IProps>`
+  ${({ active, theme }) => css`
     align-items: center;
+    background-color: ${active
+      ? theme.colors.gridBlockActive
+      : theme.colors.gridBlock};
     border: solid 1px ${theme.colors.grid};
     cursor: pointer;
     display: flex;
