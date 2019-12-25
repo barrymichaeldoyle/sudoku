@@ -4,6 +4,12 @@ export type INDEX = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
 export type N = 0 | NUMBERS
 
+export interface NORMALIZED_GRID {
+  [x: number]: {
+    [x: number]: N
+  }
+}
+
 export type NUMBERS = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 export type ROW = [N, N, N, N, N, N, N, N, N]

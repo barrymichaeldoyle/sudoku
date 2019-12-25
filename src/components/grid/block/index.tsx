@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useSelector } from 'react-redux'
 
 import { Container } from './styles'
 
@@ -7,8 +8,8 @@ interface IProps {
   rowIndex: number
 }
 
-const Block: FC<IProps> = ({ colIndex, rowIndex }) => (
-  <Container data-cy="block-container">X</Container>
-)
+const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
+  return <Container data-cy="block-container">X</Container>
+}
 
 export default Block
