@@ -1,0 +1,1 @@
+export const CREATE_FULL_GRID = 'CREATE_FULL_GRID'
