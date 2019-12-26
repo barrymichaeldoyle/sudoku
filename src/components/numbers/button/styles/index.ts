@@ -17,16 +17,17 @@ export const Container = styled.button<IProps>`
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 0;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     height: auto;
     justify-content: center;
     margin: 4px 2px;
     opacity: 0.9;
     transition: ${theme.transition};
+    width: 25px;
 
     &:before {
-      padding-top: 125%;
+      padding-top: 100%;
       content: '';
       float: left;
     }
