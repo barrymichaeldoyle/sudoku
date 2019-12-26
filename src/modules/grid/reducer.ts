@@ -21,6 +21,14 @@ function reducer(state = initialState, action: AnyAction): IReducer {
       }
     }
 
+    case types.FILL_BLOCK: {
+      if (state.workingGrid) {
+        state.workingGrid[action.coords[0]][action.coords[1]] = action.value
+        return { ...state }
+      }
+      return state
+    }
+
     case types.SELECT_BLOCK:
       return { ...state, selectedBlock: action.coords }
 
