@@ -1,11 +1,11 @@
 import React, { Children, FC, useCallback, useEffect } from 'react'
 import useMousetrap from 'react-hook-mousetrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Action, Dispatch } from 'redux'
+import { AnyAction, Dispatch } from 'redux'
 
 import { IReducer } from 'modules'
-import { createFullGrid, selectBlock } from 'modules/grid'
-import { INDEX, BLOCK_COORDS } from 'typings'
+import { createFullGrid, fillBlock, selectBlock } from 'modules/grid'
+import { BLOCK_COORDS, INDEX, NUMBERS } from 'typings'
 
 import Block from './block'
 import { Container, Row } from './styles'
@@ -18,9 +18,20 @@ const Grid: FC = () => {
   const state = useSelector<IReducer, IState>(
     ({ grid: { selectedBlock } }) => ({ selectedBlock })
   )
-  const dispatch = useDispatch<Dispatch<Action>>()
+  const dispatch = useDispatch<Dispatch<AnyAction>>()
 
   const create = useCallback(() => dispatch(createFullGrid()), [dispatch])
+
+  const fill = useCallback(
+    (n: NUMBERS) => {
+      if (state.selectedBlock) dispatch(fillBlock(n, state.selectedBlock))
+    },
+    [dispatch, state.selectedBlock]
+  )
+
+  // function fillBlock(n: NUMBERS): any {
+  //   dispatch(fillBlock(n, state.selectedBlock))
+  // }
 
   function moveDown() {
     if (state.selectedBlock && state.selectedBlock[0] < 8)
@@ -62,6 +73,15 @@ const Grid: FC = () => {
       )
   }
 
+  useMousetrap(['1'], () => fill(1))
+  useMousetrap(['2'], () => fill(2))
+  useMousetrap(['3'], () => fill(3))
+  useMousetrap(['4'], () => fill(4))
+  useMousetrap(['5'], () => fill(5))
+  useMousetrap(['6'], () => fill(6))
+  useMousetrap(['7'], () => fill(7))
+  useMousetrap(['8'], () => fill(8))
+  useMousetrap(['9'], () => fill(9))
   useMousetrap('down', moveDown)
   useMousetrap('left', moveLeft)
   useMousetrap('right', moveRight)
