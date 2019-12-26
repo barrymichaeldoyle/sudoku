@@ -24,7 +24,7 @@ export const Container = styled.button<IProps>`
     margin: 4px 2px;
     opacity: 0.9;
     transition: ${theme.transition};
-    width: 25px;
+    width: 24px;
 
     &:before {
       padding-top: 100%;
