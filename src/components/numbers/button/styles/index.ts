@@ -23,8 +23,8 @@ export const Container = styled.button<IProps>`
     justify-content: center;
     margin: 4px 2px;
     opacity: 0.9;
+    padding: 0;
     transition: ${theme.transition};
-    width: 24px;
 
     &:before {
       padding-top: 100%;
