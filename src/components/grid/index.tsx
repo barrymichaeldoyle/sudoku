@@ -5,18 +5,25 @@ import { AnyAction, Dispatch } from 'redux'
 
 import { IReducer } from 'modules'
 import { createFullGrid, fillBlock, selectBlock } from 'modules/grid'
-import { BLOCK_COORDS, INDEX, NUMBERS } from 'typings'
+import { BLOCK_COORDS, INDEX, N, NUMBERS } from 'typings'
 
 import Block from './block'
 import { Container, Row } from './styles'
 
 interface IState {
   selectedBlock?: BLOCK_COORDS
+  selectedValue: N
 }
 
 const Grid: FC = () => {
   const state = useSelector<IReducer, IState>(
-    ({ grid: { selectedBlock } }) => ({ selectedBlock })
+    ({ grid: { selectedBlock, workingGrid } }) => ({
+      selectedBlock,
+      selectedValue:
+        workingGrid && selectedBlock
+          ? workingGrid[selectedBlock[0]][selectedBlock[1]]
+          : 0,
+    })
   )
   const dispatch = useDispatch<Dispatch<AnyAction>>()
 
@@ -24,14 +31,11 @@ const Grid: FC = () => {
 
   const fill = useCallback(
     (n: NUMBERS) => {
-      if (state.selectedBlock) dispatch(fillBlock(n, state.selectedBlock))
+      if (state.selectedBlock && state.selectedValue === 0)
+        dispatch(fillBlock(n, state.selectedBlock))
     },
-    [dispatch, state.selectedBlock]
+    [dispatch, state.selectedBlock, state.selectedValue]
   )
-
-  // function fillBlock(n: NUMBERS): any {
-  //   dispatch(fillBlock(n, state.selectedBlock))
-  // }
 
   function moveDown() {
     if (state.selectedBlock && state.selectedBlock[0] < 8)
