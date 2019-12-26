@@ -3,8 +3,7 @@ import useMousetrap from 'react-hook-mousetrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
-import { IReducer } from 'modules'
-import { createFullGrid, fillBlock, selectBlock } from 'modules/grid'
+import { createFullGrid, fillBlock, IReducer, selectBlock } from 'modules'
 import { BLOCK_COORDS, INDEX, N, NUMBERS } from 'typings'
 
 import Block from './block'
@@ -17,7 +16,7 @@ interface IState {
 
 const Grid: FC = () => {
   const state = useSelector<IReducer, IState>(
-    ({ grid: { selectedBlock, workingGrid } }) => ({
+    ({ selectedBlock, workingGrid }) => ({
       selectedBlock,
       selectedValue:
         workingGrid && selectedBlock

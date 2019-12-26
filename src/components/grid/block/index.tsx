@@ -2,11 +2,10 @@ import React, { FC } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Dispatch, AnyAction } from 'redux'
 
-import { IReducer } from 'modules'
+import { IReducer, selectBlock } from 'modules'
 import { N, INDEX } from 'typings'
 
 import { Container } from './styles'
-import { selectBlock } from 'modules/grid'
 
 interface IProps {
   colIndex: INDEX
@@ -22,7 +21,7 @@ interface IState {
 
 const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
   const state = useSelector<IReducer, IState>(
-    ({ grid: { challengeGrid, selectedBlock, solvedGrid, workingGrid } }) => ({
+    ({ challengeGrid, selectedBlock, solvedGrid, workingGrid }) => ({
       isActive: selectedBlock
         ? selectedBlock[0] === rowIndex && selectedBlock[1] === colIndex
         : false,

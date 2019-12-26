@@ -1,8 +1,7 @@
-import { combineReducers } from 'redux'
+import reducer from './reducer'
 
-import grid from './grid'
-
-const reducer = combineReducers({ grid })
+export * from './actions'
+export * from './interfaces'
 
 export type IReducer = ReturnType<typeof reducer>
 export default reducer

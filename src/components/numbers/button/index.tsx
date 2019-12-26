@@ -2,8 +2,7 @@ import React, { FC, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
-import { IReducer } from 'modules'
-import { fillBlock } from 'modules/grid'
+import { fillBlock, IReducer } from 'modules'
 import { BLOCK_COORDS, N, NUMBERS } from 'typings'
 
 import { Container } from './styles'
@@ -19,7 +18,7 @@ interface IState {
 
 const Button: FC<IProps> = ({ value }) => {
   const state = useSelector<IReducer, IState>(
-    ({ grid: { selectedBlock, workingGrid } }) => ({
+    ({ selectedBlock, workingGrid }) => ({
       selectedBlock,
       selectedValue:
         workingGrid && selectedBlock
