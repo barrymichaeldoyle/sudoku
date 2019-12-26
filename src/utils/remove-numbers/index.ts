@@ -1,6 +1,6 @@
 import global from 'global'
-import { getRandomIndex, solveGrid } from 'utils'
-import { GRID, INDEX } from 'typings'
+import { getRandomIndex, solveGrid, copyGrid } from 'utils'
+import { GRID } from 'typings'
 
 function removeNumbers(grid: GRID, attempts = 5): GRID {
   while (attempts > 0) {
@@ -15,14 +15,10 @@ function removeNumbers(grid: GRID, attempts = 5): GRID {
     const backup = grid[row][col]
     grid[row][col] = 0
 
-    const gridCopy: any[] = []
-    for (let r: INDEX = 0; r < 9; r++) {
-      gridCopy[r] = []
-      for (let c: INDEX = 0; c < 9; c++) gridCopy[r][c] = grid[r][c]
-    }
+    const gridCopy = copyGrid(grid)
 
     global.counter = 0
-    solveGrid(gridCopy as GRID)
+    solveGrid(gridCopy)
 
     if (global.counter !== 1) {
       grid[row][col] = backup
