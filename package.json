@@ -1,7 +1,7 @@
 {
   "name": "sudoku",
   "version": "0.1.0",
-  "homepage": "https://reactsudoku.com",
+  "homepage": "http://reactsudoku.com",
   "private": true,
   "scripts": {
     "predeploy": "yarn build",
