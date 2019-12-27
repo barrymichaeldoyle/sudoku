@@ -2,10 +2,9 @@ import React, { FC, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
+import { Button } from 'components'
 import { fillBlock, IReducer } from 'modules'
 import { BLOCK_COORDS, N, NUMBERS } from 'typings'
-
-import { Container } from './styles'
 
 interface IProps {
   value: NUMBERS
@@ -16,7 +15,7 @@ interface IState {
   selectedValue: N
 }
 
-const Button: FC<IProps> = ({ value }) => {
+const NumberButton: FC<IProps> = ({ value }) => {
   const state = useSelector<IReducer, IState>(
     ({ selectedBlock, workingGrid }) => ({
       selectedBlock,
@@ -33,7 +32,7 @@ const Button: FC<IProps> = ({ value }) => {
       dispatch(fillBlock(value, state.selectedBlock))
   }, [dispatch, state.selectedBlock, state.selectedValue, value])
 
-  return <Container onClick={fill}>{value}</Container>
+  return <Button onClick={fill}>{value}</Button>
 }
 
-export default Button
+export default NumberButton
