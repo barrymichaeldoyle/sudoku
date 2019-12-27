@@ -1,5 +1,6 @@
 import { AnyAction } from 'redux'
 
+import { GRID } from 'typings'
 import { copyGrid, createFullGrid, removeNumbers, compareArrays } from 'utils'
 
 import * as types from './types'
@@ -13,11 +14,12 @@ function reducer(state = initialState, action: AnyAction): IReducer {
       const solvedGrid = createFullGrid()
       const copiedGrid = copyGrid(solvedGrid)
       const challengeGrid = removeNumbers(copiedGrid)
+      const workingGrid = copyGrid(challengeGrid)
       return {
         ...state,
         challengeGrid,
         solvedGrid,
-        workingGrid: copyGrid(challengeGrid),
+        workingGrid,
       }
     }
 
@@ -26,13 +28,13 @@ function reducer(state = initialState, action: AnyAction): IReducer {
         if (
           state.solvedGrid[action.coords[0]][action.coords[1]] !== action.value
         ) {
-          alert('Incorrect option!')
+          alert('Incorrect Option!')
           return state
         }
         state.workingGrid[action.coords[0]][action.coords[1]] = action.value
         if (compareArrays(state.workingGrid, state.solvedGrid))
           alert('Completed!')
-        if (state.workingGrid) return { ...state }
+        return { ...state, workingGrid: [...state.workingGrid] as GRID }
       }
       return state
     }
