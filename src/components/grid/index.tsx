@@ -3,7 +3,7 @@ import useMousetrap from 'react-hook-mousetrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
-import { createFullGrid, fillBlock, IReducer, selectBlock } from 'modules'
+import { createGrid, fillBlock, IReducer, selectBlock } from 'modules'
 import { BLOCK_COORDS, GRID, INDEX, N, NUMBERS } from 'typings'
 
 import Block from './block'
@@ -28,7 +28,7 @@ const Grid: FC = () => {
   )
   const dispatch = useDispatch<Dispatch<AnyAction>>()
 
-  const create = useCallback(() => dispatch(createFullGrid()), [dispatch])
+  const create = useCallback(() => dispatch(createGrid()), [dispatch])
 
   const fill = useCallback(
     (n: NUMBERS) => {
