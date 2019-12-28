@@ -1,21 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [DEMO HERE](https://reactsudoku.com)
 
-It is a hobby project that I'm making to keep my algorithmic skills up tos cratch and demonstrate my ability to build applications with a variety of toolsets!
+A Sudoku game built with React and TypeScript to demonstrate my ability as a front end developer.
 
-Currently this project demonstrates my proficiency in the following:
+This project demonstrates my proficiency in the following:
 
-- ReactJS with TypeScript
-- Maintaining an organized codebase with consistent development patterns
-- Unit Testing Components and Functions with Jest
-
-Upcoming proficiency demonstrations:
-
-- Redux
-- Developing for Accessibility
-- Styled Components (with Animations etc.)
-- Routing
-- Code Splitting
-- End to End Testing with Cypress
+- How to build a Complete ReactJS Application
+- Structuring Code and Implementing Best Practices
+- TypeScript with ReactJS & Redux
+- React Hooks
+- Styled Components
+- Offline & Mobile First Development Approach
+- Unit Testing Functions with Jest
 
 ## Available Scripts
 
@@ -34,28 +29,6 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+======
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
