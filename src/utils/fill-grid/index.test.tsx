@@ -3,7 +3,7 @@ import { GRID } from 'typings'
 import fillGrid from './'
 
 describe('fillGrid', () => {
-  it('fills a grid an empty grid', () => {
+  it('fills a grid', () => {
     const grid: GRID = [
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
