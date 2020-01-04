@@ -1374,6 +1374,11 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-hook-mousetrap@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-hook-mousetrap/-/react-hook-mousetrap-2.0.0.tgz#41f9aaa18b8f6f0323a431aac95b7472e3f20470"
+  integrity sha512-P2ciXdvykHNmvFq595E2ksy+np7bxWDC9BFCamk9r1+c4wa0CT9PjRLicyfiDNkDftnZ6QsdHrH35eXm11+5Vw==
+
 "@types/react-native@*":
   version "0.60.26"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.26.tgz#cfbb02c39cd162240d59f4922b5bdeb0c212f90d"
