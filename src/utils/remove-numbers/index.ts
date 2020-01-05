@@ -27,7 +27,7 @@ function removeNumbers(grid: GRID, attempts = 5): GRID {
 
     if (global.counter !== 1) {
       grid[row][col] = backup
-      attempts -= 1
+      attempts--
     }
   }
 
